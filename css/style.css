@@ -1,2 +1,79 @@
-body {
-  background: #220000; }
+header {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  padding: 10px; }
+  header.marcopolo {
+    background-image: url("../images/_MG_0138_banner.jpg"); }
+  header.messaging {
+    background-image: url("../images/_MG_0139.jpg"); }
+  header.hairsalon {
+    background-image: url("../images/_MG_0145.jpg"); }
+  header.album {
+    background-image: url("../images/_MG_0305.jpg"); }
+
+@media (max-width: 767px) and (orientation: portrait) {
+  header.marcopolo {
+    background-image: url("../images/_MG_0138_portrait.jpg"); }
+  header.messaging {
+    background-image: url("../images/_MG_0139.jpg"); }
+  header.hairsalon {
+    background-image: url("../images/_MG_0145.jpg"); }
+  header.album {
+    background-image: url("../images/_MG_0305.jpg"); } }
+
+.dots {
+  color: #ddd;
+  margin-bottom: 20px; }
+  .dots span {
+    display: block;
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    margin-right: 40px;
+    margin-left: auto;
+    margin-bottom: 5px; }
+    .dots span.active {
+      color: #fff;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #fff;
+      font-weight: 700; }
+
+.project-description .toggle-description {
+  margin-right: 40px;
+  margin-left: auto;
+  display: block;
+  background: transparent;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  padding: 0; }
+  .project-description .toggle-description:focus {
+    outline: none;
+    box-shadow: none; }
+
+.project-description #description {
+  margin-right: 40px;
+  margin-left: auto;
+  border: 1px solid #ddd;
+  padding: 40px 35px 30px;
+  background: #fff;
+  color: grey;
+  font-size: 12px;
+  letter-spacing: .2px;
+  width: calc(100% - 80px);
+  max-width: 400px; }
+
+.my-btn {
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 11px;
+  font-weight: 600; }
+  .my-btn:hover {
+    color: #333;
+    text-decoration: none; }

@@ -6,11 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portcodio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b50f919a85.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 
 <body>
-    <p>Test</p>
+    <header class="marcopolo">
+
+        <div class="dots">
+            <span data-key="0" id="one" class="active">1</span>
+            <span data-key="1" id="two">2</span>
+            <span data-key="2" id="three">3</span>
+            <span data-key="3" id="four">4</span>
+        </div>
+        <div class="play-control">
+            <div class="play"><i class="fas fa-play-circle"></i></div>
+            <div class="stop"><i class="fas fa-stop-circle"></i></div>
+        </div>
+
+        <div class="project-description">
+            <button class="btn toggle-description" type="button" data-toggle="collapse" data-target="#description"
+                aria-expanded="false" aria-controls="collapseExample">Opis projektu</button>
+            <div class="collapse" id="description">
+                <p class="about-project">Strona biura podróży połączona z aplikacją umożliwiającą zarządzanie ofertą
+                    wyjazdową, zawartością strony i samym wyjazdem. </p>
+                <p class="about-tchnologies">Wykorzystane technologie: Python, Django, MySQL, JS, JQuery, Ajax, CSS3,
+                    SASS, HTML</p>
+                <div class="link-to-code"><a href="//marcopolo.rzeszow.pl" rel="nofollow" class="my-btn">Kod źródłowy
+                        >></a></div>
+                <div class="link-to-project"><a href="//marcopolo.rzeszow.pl" rel="nofollow" class="my-btn">Strona >></a></div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 
