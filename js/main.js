@@ -33,7 +33,10 @@ class Slider {
     constructor(slides) {
         this.slides = slides;
         this.index = 0;
+        this.interval = null;
+        this.playSwich = true;
 
+        /* DOM elements */
         this.img = document.querySelector('header');
         this.description = document.querySelector('.about-project');
         this.linkToCode = document.querySelector('.link-to-code a');
@@ -41,12 +44,15 @@ class Slider {
         this.dots = [...document.querySelectorAll('.dots span')];
         this.play = document.querySelector('.play-control .play');
         this.stop = document.querySelector('.play-control .stop');
-        this.interval = null;
-        this.interval = setInterval(this.changeSlide.bind(this), 1000);
+
+        /* control slider action */
+        this.interval = setInterval(this.changeSlide.bind(this), 5000);
         window.addEventListener('keydown', this.changeSlideOnKeyPress.bind(this));
         this.play.addEventListener('click', this.runSlider.bind(this));
         this.stop.addEventListener('click', this.stopSlider.bind(this));
-
+        this.play.addEventListener('touch', this.runSlider.bind(this));
+        this.stop.addEventListener('touch', this.stopSlider.bind(this));
+        this.dots.forEach(dot => dot.addEventListener('click', this.changeSlideOnClick.bind(this)));
 
     }
 
@@ -55,10 +61,7 @@ class Slider {
         this.dots[oldIndex].classList.remove('active');
         this.dots[this.index].classList.add('active');
     }
-
-    changeIndex(changeValue, breakValue, newValue) {
-        this.index += changeValue;
-        if (this.index === breakValue) this.index = newValue;
+    setNewValues() {
         this.img.style.display = 'none';
         this.img.className = this.slides[this.index].class;
         $(this.img).fadeIn();
@@ -67,32 +70,55 @@ class Slider {
         this.linkToProject.setAttribute('href', this.slides[this.index].code);
     }
 
+    changeIndex(changeValue, breakValue, newValue) {
+        this.index += changeValue;
+        if (this.index === breakValue) this.index = newValue;
+        this.setNewValues();
+    }
+
     changeSlide() {
         this.changeIndex(1, this.slides.length, 0);
         this.changeDots();
     }
 
     changeSlideOnKeyPress(e) {
+        console.log("test");
         if (e.keyCode == 37 || e.keyCode == 39) {
             clearInterval(this.interval);
             if (e.keyCode == 39) {
                 this.changeIndex(1, this.slides.length, 0);
             } else if (e.keyCode == 37) {
-                this.changeIndex(-1, -1, slides.length - 1);
+                this.changeIndex(-1, -1, this.slides.length - 1);
             }
             this.changeDots();
-            this.interval = setInterval(this.changeSlide.bind(this), 1000);
+            this.interval = setInterval(this.changeSlide.bind(this), 5000);
+        } else if (e.keyCode == 32) {
+            if (this.playSwich) {
+                console.log('test2');
+                this.stopSlider();
+            } else {
+                this.runSlider();
+            }
         }
+    }
+
+    changeSlideOnClick(e) {
+        this.index = parseInt(e.target.dataset.key);
+        this.setNewValues();
+        this.changeDots();
     }
 
     stopSlider() {
         clearInterval(this.interval);
+        this.playSwich = !this.playSwich;
         $(this.stop).hide();
         $(this.play).show();
     }
 
     runSlider() {
-        this.interval = setInterval(this.changeSlide.bind(this), 1000);
+        this.playSwich = !this.playSwich;
+        this.changeSlide();
+        this.interval = setInterval(this.changeSlide.bind(this), 5000);
         $(this.play).hide();
         $(this.stop).show();
     }
