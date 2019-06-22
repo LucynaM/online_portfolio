@@ -5,6 +5,7 @@ const slides = [
         url: 'https://marcopolo.rzeszow.pl',
         code: 'https://github.com/LucynaM/tour_operator',
         class: 'marcopolo',
+        technologies: 'Python, Django, MySQL, JS, JQuery, Ajax, CSS3, SASS, Bootstrap, HTML',
     },
     {
         title: 'Messaging',
@@ -12,13 +13,15 @@ const slides = [
         url: 'http://messaging.portcodio.pl',
         code: 'https://github.com/LucynaM/twitter-like-app',
         class: 'messaging',
+        technologies: 'Python, Django, MySQL, JS, CSS3, Bootstrap, HTML',
     },
     {
         title: 'Album',
-        description: "Online'owy album fotograficzny prezentujący zdjęcia użytkoników i pozwalający im komentować i oceniać zdjęcia innych.",
+        description: "Online'owy album fotograficzny prezentujący zdjęcia użytkowników i pozwalający im komentować i oceniać zdjęcia innych.",
         url: 'http://album.portcodio.pl',
         code: 'https://github.com/LucynaM/photoalbum',
         class: 'album',
+        technologies: 'Python, Django, MySQL, JS, JQuery, Ajax, CSS3, SASS, Bootstrap, HTML',
     },
     {
         title: 'Hairsalon',
@@ -26,6 +29,7 @@ const slides = [
         url: 'http://hairsalon.portcodio.pl',
         code: 'https://github.com/LucynaM/django_hairsalon',
         class: 'hairsalon',
+        technologies: 'Python, Django, MySQL, JS, JQuery, CSS3, SASS, Bootstrap, HTML',
     },
 ];
 
@@ -41,6 +45,7 @@ class Slider {
         this.description = document.querySelector('.about-project');
         this.linkToCode = document.querySelector('.link-to-code a');
         this.linkToProject = document.querySelector('.link-to-project a');
+        this.technologies = document.querySelector('.about-tchnologies');
         this.dots = [...document.querySelectorAll('.dots span')];
         this.play = document.querySelector('.play-control .play');
         this.stop = document.querySelector('.play-control .stop');
@@ -68,6 +73,7 @@ class Slider {
         this.description.textContent = this.slides[this.index].description;
         this.linkToCode.setAttribute('href', this.slides[this.index].code);
         this.linkToProject.setAttribute('href', this.slides[this.index].url);
+        this.technologies.textContent = `Technologie: ${this.slides[this.index].technologies}`;
     }
 
     changeIndex(changeValue, breakValue, newValue) {
