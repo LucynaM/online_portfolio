@@ -8,35 +8,38 @@ header {
     background-size: cover;
     padding: 10px;
     &.marcopolo {
-        background-image: url('../images/_MG_0138_banner.jpg');
+        background-image: url('../images/marcopolo_landscape.jpg');
     }
     &.messaging {
-        background-image: url('../images/_MG_0139.jpg');
+        background-image: url('../images/messaging_landscape.jpg');
     }
     &.hairsalon {
-        background-image: url('../images/_MG_0145.jpg');
+        background-image: url('../images/hairsalon_landscape.jpg');
+        background-position: bottom;
     }
     &.album {
-        background-image: url('../images/_MG_0305.jpg');
+        background-image: url('../images/album_landscape.jpg');
     }
 }
 
 @media (max-width: 767px) and (orientation: portrait) {
     header {
+        height: 80vh;
         &.marcopolo {
-            background-image: url('../images/_MG_0138_portrait.jpg');
+            background-image: url('../images/marcopolo_portrait.jpg');
         }
         &.messaging {
-            background-image: url('../images/_MG_0139.jpg');
+            background-image: url('../images/messaging_portrait.jpg');
         }
         &.hairsalon {
-            background-image: url('../images/_MG_0145.jpg');
+            background-image: url('../images/hairsalon_portrait.jpg');
         }
         &.album {
-            background-image: url('../images/_MG_0305.jpg');
+            background-image: url('../images/album_portrait.jpg');
         }
     }
 }
+
 
 .dots {
     display: block;
@@ -45,16 +48,19 @@ header {
     right: 0;
     text-align: center;
     margin-top: 20px;
-    color: #333;
+    color: $alt-color;
     font-size: 13px;
     span {
         @include center-items;
         @include indicators;
         cursor: pointer;
+        &:hover {
+            color: $alt-color;
+        }
         &.active {
-            color: #000;
+            color: $main-color;
             margin-bottom: 10px;
-            border-bottom: 1px solid #000;
+            border-bottom: 1px solid $main-color;
             font-weight: 700;
         }
         &:last-of-type {
@@ -64,7 +70,7 @@ header {
 }
 .play-control {
     @include center-items;
-    color: #000;
+    color: $main-color;
     .play,
     .stop {
         @include indicators;
@@ -73,42 +79,26 @@ header {
     .play {
         display: none;
     }
+    &:hover {
+        color: $alt-color;
+    }
 }
 
 .project-description {
     padding: 40px 35px 30px;
-    background: #fff;
-    color: grey;
+    color: $text-color;
     font-size: 13px;
     letter-spacing: .2px;
 }
 
-.modal-content {
-    border-radius: 0;
-}
-
-.modal-content button.close {
-    background: black;
-    opacity: 1;
-    color: white;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: -15px;
-    top: -15px;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-
 .my-btn {
-    color: #000;
+    color: $main-color;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 11px;
     font-weight: 600;
     &:hover {
-        color: #333;
+        color: $alt-color;
         text-decoration: none;
     }
 }

@@ -5,23 +5,26 @@ header {
   background-size: cover;
   padding: 10px; }
   header.marcopolo {
-    background-image: url("../images/_MG_0138_banner.jpg"); }
+    background-image: url("../images/marcopolo_landscape.jpg"); }
   header.messaging {
-    background-image: url("../images/_MG_0139.jpg"); }
+    background-image: url("../images/messaging_landscape.jpg"); }
   header.hairsalon {
-    background-image: url("../images/_MG_0145.jpg"); }
+    background-image: url("../images/hairsalon_landscape.jpg");
+    background-position: bottom; }
   header.album {
-    background-image: url("../images/_MG_0305.jpg"); }
+    background-image: url("../images/album_landscape.jpg"); }
 
 @media (max-width: 767px) and (orientation: portrait) {
-  header.marcopolo {
-    background-image: url("../images/_MG_0138_portrait.jpg"); }
-  header.messaging {
-    background-image: url("../images/_MG_0139.jpg"); }
-  header.hairsalon {
-    background-image: url("../images/_MG_0145.jpg"); }
-  header.album {
-    background-image: url("../images/_MG_0305.jpg"); } }
+  header {
+    height: 80vh; }
+    header.marcopolo {
+      background-image: url("../images/marcopolo_portrait.jpg"); }
+    header.messaging {
+      background-image: url("../images/messaging_portrait.jpg"); }
+    header.hairsalon {
+      background-image: url("../images/hairsalon_portrait.jpg"); }
+    header.album {
+      background-image: url("../images/album_portrait.jpg"); } }
 
 .dots {
   display: block;
@@ -41,6 +44,8 @@ header {
     height: 25px;
     text-align: center;
     cursor: pointer; }
+    .dots span:hover {
+      color: #333; }
     .dots span.active {
       color: #000;
       margin-bottom: 10px;
@@ -63,28 +68,14 @@ header {
     cursor: pointer; }
   .play-control .play {
     display: none; }
+  .play-control:hover {
+    color: #333; }
 
 .project-description {
   padding: 40px 35px 30px;
-  background: #fff;
   color: grey;
   font-size: 13px;
   letter-spacing: .2px; }
-
-.modal-content {
-  border-radius: 0; }
-
-.modal-content button.close {
-  background: black;
-  opacity: 1;
-  color: white;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: -15px;
-  top: -15px;
-  font-size: 18px;
-  font-weight: 500; }
 
 .my-btn {
   color: #000;
