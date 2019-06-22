@@ -46,7 +46,7 @@ class Slider {
         this.stop = document.querySelector('.play-control .stop');
 
         /* control slider action */
-        this.interval = setInterval(this.changeSlide.bind(this), 5000);
+        this.interval = setInterval(this.changeSlide.bind(this), 10000);
         window.addEventListener('keydown', this.changeSlideOnKeyPress.bind(this));
         this.play.addEventListener('click', this.runSlider.bind(this));
         this.stop.addEventListener('click', this.stopSlider.bind(this));
@@ -91,7 +91,7 @@ class Slider {
                 this.changeIndex(-1, -1, this.slides.length - 1);
             }
             this.changeDots();
-            this.interval = setInterval(this.changeSlide.bind(this), 5000);
+            this.interval = setInterval(this.changeSlide.bind(this), 10000);
         } else if (e.keyCode == 32) {
             if (this.playSwich) {
                 this.stopSlider();
@@ -117,7 +117,7 @@ class Slider {
     runSlider() {
         this.playSwich = !this.playSwich;
         this.changeSlide();
-        this.interval = setInterval(this.changeSlide.bind(this), 5000);
+        this.interval = setInterval(this.changeSlide.bind(this), 10000);
         $(this.play).hide();
         $(this.stop).show();
     }
