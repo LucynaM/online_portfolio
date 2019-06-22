@@ -24,49 +24,67 @@ header {
     background-image: url("../images/_MG_0305.jpg"); } }
 
 .dots {
-  color: #ddd;
-  margin-bottom: 20px; }
+  display: block;
+  padding: 40px 35px 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  font-size: 13px; }
   .dots span {
-    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    display: inline-block;
     width: 20px;
     height: 25px;
     text-align: center;
-    margin-right: 40px;
-    margin-left: auto;
-    margin-bottom: 5px; }
+    cursor: pointer; }
     .dots span.active {
-      color: #fff;
+      color: #000;
       margin-bottom: 10px;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid #000;
       font-weight: 700; }
+    .dots span:last-of-type {
+      margin-right: 20px; }
 
-.project-description .toggle-description {
-  margin-right: 40px;
+.play-control {
+  margin-right: auto;
   margin-left: auto;
-  display: block;
-  background: transparent;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-  padding: 0; }
-  .project-description .toggle-description:focus {
-    outline: none;
-    box-shadow: none; }
+  margin-bottom: 5px;
+  display: inline-block;
+  color: #000; }
+  .play-control .play,
+  .play-control .stop {
+    width: 20px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer; }
+  .play-control .play {
+    display: none; }
 
-.project-description #description {
-  margin-right: 40px;
-  margin-left: auto;
-  border: 1px solid #ddd;
+.project-description {
   padding: 40px 35px 30px;
   background: #fff;
   color: grey;
-  font-size: 12px;
-  letter-spacing: .2px;
-  width: calc(100% - 80px);
-  max-width: 400px; }
+  font-size: 13px;
+  letter-spacing: .2px; }
+
+.modal-content {
+  border-radius: 0; }
+
+.modal-content button.close {
+  background: black;
+  opacity: 1;
+  color: white;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  font-size: 18px;
+  font-weight: 500; }
 
 .my-btn {
   color: #000;

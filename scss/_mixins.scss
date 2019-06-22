@@ -1,1 +1,11 @@
-$base-color: #220000;
+@mixin center-items {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+@mixin indicators {
+    width: 20px;
+    height: 25px;
+    text-align: center;
+}

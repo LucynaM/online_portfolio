@@ -2,29 +2,29 @@ const slides = [
     {
         title: "Marco Polo",
         description: "Strona biura podróży połączona z aplikacją umożliwiającą zarządzanie ofertą wyjazdową, zawartością strony i samym wyjazdem.",
-        url: 'marcopolo.rzeszow.pl',
-        code: 'github-coś-tam',
+        url: 'https://marcopolo.rzeszow.pl',
+        code: 'https://github.com/LucynaM/tour_operator',
         class: 'marcopolo',
     },
     {
         title: 'Messaging',
         description: "Aplikacja w stylu twittera pozwalająca użytkownikom umieszczać na stronie wpisy, komentować wpisy innych oraz wysyłać do siebie prywatne wiadomości.",
-        url: 'messaging.portcodio.pl',
-        code: 'github-coś-tam',
+        url: 'http://messaging.portcodio.pl',
+        code: 'https://github.com/LucynaM/twitter-like-app',
         class: 'messaging',
     },
     {
         title: 'Album',
         description: "Online'owy album fotograficzny prezentujący zdjęcia użytkoników i pozwalający im komentować i oceniać zdjęcia innych.",
-        url: 'album.portcodio.pl',
-        code: 'github-coś-tam',
+        url: 'http://album.portcodio.pl',
+        code: 'https://github.com/LucynaM/photoalbum',
         class: 'album',
     },
     {
         title: 'Hairsalon',
         description: "Strona salonu fryzjerskiego połączona z aplikacją do umawiania wizyt online.",
-        url: 'hairsalon.portcodio.pl',
-        code: 'github-coś-tam',
+        url: 'http://hairsalon.portcodio.pl',
+        code: 'https://github.com/LucynaM/django_hairsalon',
         class: 'hairsalon',
     },
 ];
@@ -66,8 +66,8 @@ class Slider {
         this.img.className = this.slides[this.index].class;
         $(this.img).fadeIn();
         this.description.textContent = this.slides[this.index].description;
-        this.linkToCode.setAttribute('href', this.slides[this.index].url);
-        this.linkToProject.setAttribute('href', this.slides[this.index].code);
+        this.linkToCode.setAttribute('href', this.slides[this.index].code);
+        this.linkToProject.setAttribute('href', this.slides[this.index].url);
     }
 
     changeIndex(changeValue, breakValue, newValue) {
@@ -94,7 +94,6 @@ class Slider {
             this.interval = setInterval(this.changeSlide.bind(this), 5000);
         } else if (e.keyCode == 32) {
             if (this.playSwich) {
-                console.log('test2');
                 this.stopSlider();
             } else {
                 this.runSlider();
