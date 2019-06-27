@@ -10,7 +10,7 @@ const slides = [
     {
         title: 'Messaging',
         description: "Aplikacja w stylu twittera pozwalająca użytkownikom umieszczać na stronie wpisy, komentować wpisy innych oraz wysyłać do siebie prywatne wiadomości.",
-        url: 'http://messaging.portcodio.pl',
+        url: 'https://messaging.portcodio.pl',
         code: 'https://github.com/LucynaM/twitter-like-app',
         class: 'messaging',
         technologies: 'Python, Django, MySQL, JS, CSS3, Bootstrap, HTML',
@@ -18,7 +18,7 @@ const slides = [
     {
         title: 'Album',
         description: "Online'owy album fotograficzny prezentujący zdjęcia użytkowników i pozwalający im komentować i oceniać zdjęcia innych.",
-        url: 'http://album.portcodio.pl',
+        url: 'https://album.portcodio.pl',
         code: 'https://github.com/LucynaM/photoalbum',
         class: 'album',
         technologies: 'Python, Django, MySQL, JS, JQuery, Ajax, CSS3, SASS, Bootstrap, HTML',
@@ -26,7 +26,7 @@ const slides = [
     {
         title: 'Hairsalon',
         description: "Strona salonu fryzjerskiego połączona z aplikacją do umawiania wizyt online.",
-        url: 'http://hairsalon.portcodio.pl',
+        url: 'https://hairsalon.portcodio.pl',
         code: 'https://github.com/LucynaM/django_hairsalon',
         class: 'hairsalon',
         technologies: 'Python, Django, MySQL, JS, JQuery, CSS3, SASS, Bootstrap, HTML',
@@ -41,11 +41,6 @@ class Slider {
         this.playSwich = true;
 
         /* DOM elements */
-        this.img = document.querySelector('header');
-        this.description = document.querySelector('.about-project');
-        this.linkToCode = document.querySelector('.link-to-code a');
-        this.linkToProject = document.querySelector('.link-to-project a');
-        this.technologies = document.querySelector('.about-tchnologies');
         this.dots = [...document.querySelectorAll('.dots span')];
         this.play = document.querySelector('.play-control .play');
         this.stop = document.querySelector('.play-control .stop');
@@ -58,7 +53,6 @@ class Slider {
         this.play.addEventListener('touch', this.runSlider.bind(this));
         this.stop.addEventListener('touch', this.stopSlider.bind(this));
         this.dots.forEach(dot => dot.addEventListener('click', this.changeSlideOnClick.bind(this)));
-
     }
 
     changeDots() {
@@ -67,13 +61,19 @@ class Slider {
         this.dots[this.index].classList.add('active');
     }
     setNewValues() {
-        this.img.style.display = 'none';
-        this.img.className = this.slides[this.index].class;
-        $(this.img).fadeIn();
-        this.description.textContent = this.slides[this.index].description;
-        this.linkToCode.setAttribute('href', this.slides[this.index].code);
-        this.linkToProject.setAttribute('href', this.slides[this.index].url);
-        this.technologies.textContent = `Technologie: ${this.slides[this.index].technologies}`;
+        const img = document.querySelector('header');
+        const description = document.querySelector('.about-project');
+        const linkToCode = document.querySelector('.link-to-code a');
+        const linkToProject = document.querySelector('.link-to-project a');
+        const technologies = document.querySelector('.about-tchnologies');
+
+        img.style.display = 'none';
+        img.className = this.slides[this.index].class;
+        $(img).fadeIn();
+        description.textContent = this.slides[this.index].description;
+        linkToCode.setAttribute('href', this.slides[this.index].code);
+        linkToProject.setAttribute('href', this.slides[this.index].url);
+        technologies.textContent = `Technologie: ${this.slides[this.index].technologies}`;
     }
 
     changeIndex(changeValue, breakValue, newValue) {
@@ -88,7 +88,7 @@ class Slider {
     }
 
     changeSlideOnKeyPress(e) {
-        console.log("test");
+
         if (e.keyCode == 37 || e.keyCode == 39) {
             clearInterval(this.interval);
             if (e.keyCode == 39) {
